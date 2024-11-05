@@ -47,7 +47,7 @@ class OrderRepository:
         orders = query.offset(skip).limit(limit).all()
         return orders
 
-    def get_order(self, order_id: int) -> tuple[Order, float]:
+    def get_order(self, order_id: int) -> Order:
         return self.get_one_or_notfound(order_id)
 
     def create_order(self, order: OrderCreateUpdateSchema):
